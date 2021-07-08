@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaTelegramPlane } from 'react-icons/fa';
-
 import {
   BiGridAlt,
   BiMessageSquareDetail,
@@ -13,7 +12,6 @@ import { Button } from 'components/UI/Button/Button';
 import { Divider } from 'components/UI/Divider';
 import { Popup } from 'components/UI/Popup';
 import { Tooltip } from 'components/UI/Tooltip';
-
 import './Sidebar.scss';
 
 export const Sidebar = () => {
@@ -28,19 +26,19 @@ export const Sidebar = () => {
       <div className='sidebar-menu'>
         <ButtonGroup>
           <Tooltip placement='right' content='Feed'>
-            <Button to='/feed'>
+            <Button href='/feed'>
               <BiGridAlt className='icon' />
             </Button>
           </Tooltip>
 
           <Tooltip placement='right' content='Messages'>
-            <Button to='/messages'>
+            <Button href='/messages'>
               <BiMessageSquareDetail className='icon' />
             </Button>
           </Tooltip>
 
           <Tooltip placement='right' content='Friends'>
-            <Button to='/friends'>
+            <Button href='/friends'>
               <BiGroup className='icon' />
             </Button>
           </Tooltip>

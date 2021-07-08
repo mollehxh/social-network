@@ -4,15 +4,15 @@ import './Button.scss';
 
 interface ButtonProps {
   onClick?: () => void;
-  to?: string;
+  href?: string;
 }
 
-export const Button: FC<ButtonProps> = ({ children, onClick, to }) => {
-  return to ? (
+export const Button: FC<ButtonProps> = ({ children, onClick, href }) => {
+  return href ? (
     <NavLink
       className='button'
       activeClassName='button button--active'
-      to={to}
+      to={href}
       onClick={onClick}
     >
       {children}

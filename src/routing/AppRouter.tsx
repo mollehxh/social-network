@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { IRoute, RoutePaths, privateRoutes, publicRoutes } from './routes';
+import { Layout } from 'components/Layout';
 
 const AppRouter = () => {
   const user = true;
@@ -9,7 +10,9 @@ const AppRouter = () => {
     <Switch>
       {privateRoutes.map(({ path, Component, exact }: IRoute) => (
         <Route path={path} exact={exact}>
-          <Component />
+          <Layout>
+            <Component />
+          </Layout>
         </Route>
       ))}
       <Redirect to={RoutePaths.FEED} />
