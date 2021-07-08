@@ -1,0 +1,22 @@
+.button {
+  display: block;
+  border-radius: 12px;
+  padding: 12px;
+  background: transparent;
+  color: #c1c1c2;
+  border: none;
+  transition: 0.3s;
+
+  cursor: pointer;
+
+  &--active {
+    background: #fff;
+    box-shadow: 0 0 0 2px #f2f2f7, 0px 4px 4px rgba(0, 0, 0, 0.08%),
+      0px 4px 8px rgba(50, 50, 71, 0.01%);
+    color: #0077ff;
+  }
+
+  &:hover {
+    color: #0077ff;
+  }
+}
