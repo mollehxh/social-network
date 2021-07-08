@@ -47,14 +47,14 @@ export const Sidebar = () => {
 
       <Divider />
 
-      <Popup
-        left={58}
-        bottom={-10}
-        component={<BiCog className='sidebar__settings icon' />}
-      >
-        <div>
-          <p>Change theme</p>
-        </div>
+      <Popup placement='right-end'>
+        <Popup.TargetElement>
+          <BiCog className='sidebar__settings icon' />
+        </Popup.TargetElement>
+        <Popup.Options>
+          <Popup.Option>Change theme</Popup.Option>
+          <Popup.Option>Change language</Popup.Option>
+        </Popup.Options>
       </Popup>
     </div>
   );

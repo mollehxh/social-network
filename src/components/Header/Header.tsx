@@ -7,14 +7,13 @@ export const Header = () => {
     <header className='header'>
       <h1 className='header__title'>Header</h1>
 
-      <Popup
-        top={72}
-        right={-10}
-        component={<div className='header__user'></div>}
-      >
-        <div>
-          <p>Log out</p>
-        </div>
+      <Popup placement='bottom-end'>
+        <Popup.TargetElement>
+          <div className='header__user'></div>
+        </Popup.TargetElement>
+        <Popup.Options>
+          <Popup.Option>Log out</Popup.Option>
+        </Popup.Options>
       </Popup>
     </header>
   );
