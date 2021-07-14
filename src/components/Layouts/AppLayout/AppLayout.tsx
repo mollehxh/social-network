@@ -1,14 +1,14 @@
 import React, { FC } from 'react';
 import { Header } from 'components/Header';
 import { Sidebar } from 'components/Sidebar';
-import './Layout.scss';
+import './AppLayout.scss';
 
-export const Layout: FC = ({ children }) => {
+export const AppLayout: FC = ({ children }) => {
   return (
     <>
       <Sidebar />
       <Header />
-      <main>{children}</main>
+      <main className='app-page'>{children}</main>
     </>
   );
 };

@@ -1,61 +1,53 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import { FaTelegramPlane } from 'react-icons/fa';
 import {
-  BiGridAlt,
   BiMessageSquareDetail,
+  BiGridAlt,
   BiGroup,
   BiCog,
 } from 'react-icons/bi';
-import { ButtonGroup } from 'components/UI/ButtonGroup';
-import { Button } from 'components/UI/Button/Button';
 import { Divider } from 'components/UI/Divider';
-import { Popup } from 'components/UI/Popup';
-import { Tooltip } from 'components/UI/Tooltip';
+import { Button } from 'components/UI/Button';
 import './Sidebar.scss';
+import { ButtonGroup } from 'components/UI/ButtonGroup';
+import { Tooltip } from 'components/UI/Tooltip';
 
 export const Sidebar = () => {
   return (
     <div className='sidebar'>
-      <NavLink className='sidebar__logo-link' to='/feed'>
-        <FaTelegramPlane className='sidebar__logo icon' />
-      </NavLink>
+      <div className='sidebar-top'>
+        <Button icon color='default' href='/feed'>
+          <FaTelegramPlane />
+        </Button>
+      </div>
 
       <Divider />
-
-      <div className='sidebar-menu'>
+      <div className='sidebar-middle'>
         <ButtonGroup>
-          <Tooltip placement='right' content='Feed'>
-            <Button href='/feed'>
-              <BiGridAlt className='icon' />
+          <Tooltip content='Feed' placement='right'>
+            <Button icon href='/feed'>
+              <BiGridAlt />
             </Button>
           </Tooltip>
-
-          <Tooltip placement='right' content='Messages'>
-            <Button href='/messages'>
-              <BiMessageSquareDetail className='icon' />
+          <Tooltip content='Messages' placement='right'>
+            <Button icon href='/messages'>
+              <BiMessageSquareDetail />
             </Button>
           </Tooltip>
-
-          <Tooltip placement='right' content='Friends'>
-            <Button href='/friends'>
-              <BiGroup className='icon' />
+          <Tooltip content='Friends' placement='right'>
+            <Button icon href='/friends'>
+              <BiGroup />
             </Button>
           </Tooltip>
         </ButtonGroup>
       </div>
-
       <Divider />
 
-      <Popup placement='right-end'>
-        <Popup.TargetElement>
-          <BiCog className='sidebar__settings icon' />
-        </Popup.TargetElement>
-        <Popup.Options>
-          <Popup.Option>Change theme</Popup.Option>
-          <Popup.Option>Change language</Popup.Option>
-        </Popup.Options>
-      </Popup>
+      <div className='sidebar-bottom'>
+        <Button icon>
+          <BiCog />
+        </Button>
+      </div>
     </div>
   );
 };

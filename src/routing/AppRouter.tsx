@@ -1,18 +1,19 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { IRoute, RoutePaths, privateRoutes, publicRoutes } from './routes';
-import { Layout } from 'components/Layout';
+import { AppLayout } from 'components/Layouts/AppLayout';
+import { AuthLayout } from 'components/Layouts/AuthLayout';
 
 const AppRouter = () => {
-  const user = true;
+  const user = false;
 
   return user ? (
     <Switch>
       {privateRoutes.map(({ path, Component, exact }: IRoute) => (
         <Route path={path} exact={exact}>
-          <Layout>
+          <AppLayout>
             <Component />
-          </Layout>
+          </AppLayout>
         </Route>
       ))}
       <Redirect to={RoutePaths.FEED} />
@@ -21,7 +22,9 @@ const AppRouter = () => {
     <Switch>
       {publicRoutes.map(({ path, Component, exact }: IRoute) => (
         <Route path={path} exact={exact}>
-          <Component />
+          <AuthLayout>
+            <Component />
+          </AuthLayout>
         </Route>
       ))}
       <Redirect to={RoutePaths.LOGIN} />

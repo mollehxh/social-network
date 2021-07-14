@@ -1,34 +1,30 @@
 .sidebar {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  z-index: 10;
+  display: grid;
+  grid-template-rows: 68px 2px 1fr 2px 68px;
   width: 68px;
   height: 100vh;
-  padding: 24px 0;
-  font-size: 20px;
-  color: #c1c1c2;
   background: #fff;
   box-shadow: 2px 0px 0px #f2f2f7;
 
-  &__logo {
-    color: #2b2f53;
+  &-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  &__settings {
-    cursor: pointer;
-    transition: 0.3s;
-
-    &:hover {
-      transform: rotate(60deg);
-      color: #0077ff;
-    }
+  &-middle {
+    display: flex;
+    justify-content: center;
+    margin: 24px 0 auto;
   }
 
-  &-menu {
-    margin: 0 0 auto;
+  &-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

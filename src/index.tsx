@@ -1,4 +1,5 @@
 import React from 'react';
+import firebase from 'firebase';
 import { render } from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
