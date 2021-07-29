@@ -5,7 +5,7 @@ import { AppLayout } from 'components/Layouts/AppLayout';
 import { AuthLayout } from 'components/Layouts/AuthLayout';
 
 const AppRouter = () => {
-  const user = false;
+  const user = true;
 
   return user ? (
     <Switch>
