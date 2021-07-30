@@ -5,6 +5,7 @@ import {
   BiGridAlt,
   BiGroup,
   BiCog,
+  BiUser,
 } from 'react-icons/bi';
 import { Divider } from 'components/UI/Divider';
 import { Button } from 'components/UI/Button';
@@ -24,6 +25,11 @@ export const Sidebar = () => {
       <Divider />
       <div className='sidebar-middle'>
         <ButtonGroup>
+          <Tooltip content='Profile' placement='right'>
+            <Button icon href='/profile'>
+              <BiUser />
+            </Button>
+          </Tooltip>
           <Tooltip content='Feed' placement='right'>
             <Button icon href='/feed'>
               <BiGridAlt />

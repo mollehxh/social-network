@@ -10,16 +10,16 @@ interface TooltipProps {
 export const Tooltip: FC<TooltipProps> = ({ children, content, placement }) => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
-  const toggleIsVisible = () => {
-    setIsVisible(!isVisible);
+  const show = () => {
+    setIsVisible(true);
+  };
+
+  const hide = () => {
+    setIsVisible(false);
   };
 
   return (
-    <div
-      className='tooltip-wrapper'
-      onMouseEnter={toggleIsVisible}
-      onMouseLeave={toggleIsVisible}
-    >
+    <div className='tooltip-wrapper' onMouseEnter={show} onMouseLeave={hide}>
       <div className='tooltip-wrapper__target-element'>{children}</div>
       {isVisible && (
         <span className={`tooltip tooltip--${placement}`}>{content}</span>

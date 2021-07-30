@@ -8,6 +8,7 @@ import FriendsPage from 'pages/FriendsPage';
 export enum RoutePaths {
   LOGIN = '/login',
   REGISTER = '/register',
+  PROFILE = '/profile',
   FEED = '/feed',
   MESSAGES = '/messages',
   FRIENDS = '/friends',
@@ -33,6 +34,11 @@ export const publicRoutes: IRoute[] = [
 ];
 
 export const privateRoutes: IRoute[] = [
+  {
+    path: RoutePaths.PROFILE,
+    Component: FeedPage,
+    exact: false,
+  },
   {
     path: RoutePaths.FEED,
     Component: FeedPage,
