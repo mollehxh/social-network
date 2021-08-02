@@ -1,15 +1,17 @@
 import React from 'react';
 import { Popup } from 'components/UI/Popup';
-import './Header.scss';
 import { auth } from 'firebaseConfig';
 import { useLocation } from 'react-router-dom';
+import './Header.scss';
 
-export const Header = () => {
-  const location = useLocation();
+interface Props {
+  title?: string;
+}
 
+export const Header = ({ title }: Props) => {
   return (
     <header className='header'>
-      <h1 className='header__title'>{location.pathname.slice(1)}</h1>
+      <h1 className='header__title'>{title}</h1>
 
       <Popup placement='bottom-end'>
         <Popup.TargetElement>

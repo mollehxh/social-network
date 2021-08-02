@@ -1,13 +1,18 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Header } from 'components/Header';
 import { Sidebar } from 'components/Sidebar';
 import './AppLayout.scss';
 
-export const AppLayout: FC = ({ children }) => {
+interface Props {
+  title?: string;
+  children?: React.ReactNode;
+}
+
+export const AppLayout = ({ children, title }: Props) => {
   return (
     <>
       <Sidebar />
-      <Header />
+      <Header title={title} />
       <main className='app-page'>{children}</main>
     </>
   );

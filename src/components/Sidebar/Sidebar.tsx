@@ -9,9 +9,9 @@ import {
 } from 'react-icons/bi';
 import { Divider } from 'components/UI/Divider';
 import { Button } from 'components/UI/Button';
-import './Sidebar.scss';
 import { ButtonGroup } from 'components/UI/ButtonGroup';
 import { Tooltip } from 'components/UI/Tooltip';
+import './Sidebar.scss';
 
 export const Sidebar = () => {
   return (

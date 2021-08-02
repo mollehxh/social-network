@@ -2,11 +2,9 @@ import { Action } from 'redux';
 
 export enum AuthActionTypes {
   SET_USER = 'SET_USER',
-  SIGN_OUT = 'SIGN_OUT',
   SIGN_IN = 'SIGN_IN',
   SIGN_UP = 'SIGN_UP',
   SET_LOADING = 'SET_LOADING',
-  SET_ERROR = 'SET_ERROR',
 }
 
 export interface IUser {

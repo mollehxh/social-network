@@ -4,6 +4,7 @@ import RegisterPage from 'pages/RegisterPage';
 import FeedPage from 'pages/FeedPage';
 import MessagesPage from 'pages/MessagesPage';
 import FriendsPage from 'pages/FriendsPage';
+import ProfilePage from 'pages/PrtofilePage';
 
 export enum RoutePaths {
   LOGIN = '/login',
@@ -24,34 +25,34 @@ export const publicRoutes: IRoute[] = [
   {
     path: RoutePaths.LOGIN,
     Component: LoginPage,
-    exact: false,
+    exact: true,
   },
   {
     path: RoutePaths.REGISTER,
     Component: RegisterPage,
-    exact: false,
+    exact: true,
   },
 ];
 
 export const privateRoutes: IRoute[] = [
   {
     path: RoutePaths.PROFILE,
-    Component: FeedPage,
-    exact: false,
+    Component: ProfilePage,
+    exact: true,
   },
   {
     path: RoutePaths.FEED,
     Component: FeedPage,
-    exact: false,
+    exact: true,
   },
   {
     path: RoutePaths.MESSAGES,
     Component: MessagesPage,
-    exact: false,
+    exact: true,
   },
   {
     path: RoutePaths.FRIENDS,
     Component: FriendsPage,
-    exact: false,
+    exact: true,
   },
 ];

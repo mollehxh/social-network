@@ -1,7 +1,8 @@
 import React from 'react';
+import { AppLayout } from 'components/Layouts/AppLayout';
 
 const MessagesPage = () => {
-  return <div></div>;
+  return <AppLayout title='Messages'></AppLayout>;
 };
 
 export default MessagesPage;

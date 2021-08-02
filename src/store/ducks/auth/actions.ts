@@ -19,8 +19,3 @@ export const setLoadingAction = (payload: boolean) => ({
   type: AuthActionTypes.SET_LOADING,
   payload,
 });
-
-export const setErrorAction = (payload: string) => ({
-  type: AuthActionTypes.SET_ERROR,
-  payload,
-});

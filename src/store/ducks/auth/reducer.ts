@@ -15,9 +15,6 @@ const authReducer = produce((draft: Draft<IAuthState>, action: AuthAction) => {
     case AuthActionTypes.SET_LOADING:
       draft.isLoading = action.payload;
       break;
-    case AuthActionTypes.SET_ERROR:
-      draft.error = action.payload;
-      break;
   }
 }, initialState);
 

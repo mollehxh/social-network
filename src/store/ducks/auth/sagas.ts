@@ -1,9 +1,9 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { setErrorAction, setLoadingAction, setUserAction } from './actions';
+import { toast } from 'react-toastify';
+import { setLoadingAction, setUserAction } from './actions';
 import { AuthActionTypes } from './types';
 import * as API from 'services/api';
 import { firestore } from 'firebaseConfig';
-import { toast } from 'react-toastify';
 
 function* signInWorker(action: any): Generator {
   try {

@@ -6,21 +6,18 @@ import {
   privateRoutes,
   publicRoutes,
 } from '../routing/routes';
-import { AppLayout } from 'components/Layouts/AppLayout';
 import { AuthLayout } from 'components/Layouts/AuthLayout';
-import { RootState } from 'store';
 import { useSelector } from 'react-redux';
+import { userSelector } from 'store/ducks/auth/selectors';
 
 const AppRouter = () => {
-  const user = useSelector((state: RootState) => state.auth.user);
+  const user = useSelector(userSelector);
 
   return user ? (
     <Switch>
       {privateRoutes.map(({ path, Component, exact }: IRoute) => (
         <Route path={path} exact={exact} key={path}>
-          <AppLayout>
-            <Component />
-          </AppLayout>
+          <Component />
         </Route>
       ))}
       <Redirect to={RoutePaths.FEED} />
