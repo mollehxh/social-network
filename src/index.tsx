@@ -1,15 +1,19 @@
 import React from 'react';
+import firebase from 'firebase';
 import { render } from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from 'store';
 import { App } from './components/App';
 import { auth } from 'firebaseConfig';
-import { setLoadingAction, setUserAction } from 'store/ducks/auth/actions';
+import { setLoadingAction } from 'features/auth/model/actions';
+import { setUserAction } from 'features/auth/model/actions';
+import { User } from 'features/auth/model/types';
 
-auth.onAuthStateChanged((user) => {
+auth.onAuthStateChanged(user => {
+  const parsedUser = parseUser(user);
   store.dispatch(setLoadingAction(true));
-  store.dispatch(setUserAction(user));
+  store.dispatch(setUserAction(parsedUser));
   store.dispatch(setLoadingAction(false));
   render(
     <Router>
@@ -20,3 +24,5 @@ auth.onAuthStateChanged((user) => {
     document.getElementById('root')
   );
 });
+
+const parseUser = (user: firebase.User | null) => user as User | null;

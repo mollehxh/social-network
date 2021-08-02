@@ -1,32 +1,21 @@
 import React from 'react';
-import firebase from 'firebase';
-import { auth } from 'firebaseConfig';
+import { Formik } from 'formik';
+import { useDispatch } from 'react-redux';
+import { signInAction } from './model/actions';
 import { Button } from 'components/UI/Button';
 import { Input } from 'components/UI/Input';
 import { Divider } from 'components/UI/Divider';
 import GoogleIcon from 'assets/images/Google.svg';
 import GitHubIcon from 'assets/images/GitHub.svg';
-import { useHistory } from 'react-router-dom';
-import { Formik } from 'formik';
-import { useDispatch } from 'react-redux';
-import { signInAction } from 'store/ducks/auth/actions';
 
-const LoginPage = () => {
+export const LoginPage = () => {
   const dispatch = useDispatch();
-  const history = useHistory();
-
-  const login = async () => {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    const { user }: any = await auth.signInWithPopup(provider);
-    history.push('/feed');
-    console.log(user);
-  };
 
   return (
     <main>
       <Formik
         initialValues={{ email: '', password: '' }}
-        onSubmit={(values) => {
+        onSubmit={values => {
           dispatch(signInAction(values));
         }}
       >
@@ -58,7 +47,7 @@ const LoginPage = () => {
             </div>
             <Divider />
             <div className='form__other-auth'>
-              <img onClick={login} src={GoogleIcon} alt='' />
+              <img src={GoogleIcon} alt='' />
               <img src={GitHubIcon} alt='' />
             </div>
           </form>
@@ -67,5 +56,3 @@ const LoginPage = () => {
     </main>
   );
 };
-
-export default LoginPage;

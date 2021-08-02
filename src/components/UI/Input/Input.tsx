@@ -2,7 +2,11 @@ import React, { FC } from 'react';
 import classNames from 'classnames';
 import './Input.scss';
 
-interface InputProps {
+interface InputProps
+  extends React.DetailedHTMLProps<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement
+  > {
   placeholder?: string;
   fullWidth?: boolean;
   type?: 'password';
@@ -17,6 +21,7 @@ export const Input: FC<InputProps> = ({
   type = '',
   name = '',
   onChange = () => {},
+  ...rest
 }) => {
   return (
     <div
@@ -27,6 +32,7 @@ export const Input: FC<InputProps> = ({
       <input
         name={name}
         type={type}
+        {...rest}
         onChange={onChange}
         className={classNames('input-wrapper__input', {
           'input-wrapper__input--full-width': fullWidth,

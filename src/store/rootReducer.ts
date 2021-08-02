@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import authReducer from './ducks/auth/reducer';
+import { authReducer } from 'features/auth';
 
 export const rootReducer = combineReducers({
   auth: authReducer,

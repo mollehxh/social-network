@@ -1,5 +1,5 @@
 import React from 'react';
-import LoginPage from 'pages/LoginPage';
+import { LoginPage } from 'features/auth';
 import RegisterPage from 'pages/RegisterPage';
 import FeedPage from 'pages/FeedPage';
 import MessagesPage from 'pages/MessagesPage';
