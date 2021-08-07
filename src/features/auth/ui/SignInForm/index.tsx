@@ -1,12 +1,12 @@
 import React from 'react';
 import { Formik } from 'formik';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Button } from 'shared/ui/Button';
 import { Input } from 'shared/ui/Input';
 import { Divider } from 'shared/ui/Divider';
 import GoogleIcon from 'assets/images/Google.svg';
 import GitHubIcon from 'assets/images/GitHub.svg';
-import { signIn } from '../model';
+import { signIn } from 'features/auth/model';
 
 export const SignInForm = () => {
   const dispatch = useDispatch();

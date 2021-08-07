@@ -1,3 +1,3 @@
-export { authReducer } from './authSlice';
-export { signIn, signUp, setUser, setLoading } from './authSlice';
+export { authReducer } from './slice';
+export { signIn, signUp, setUser, setLoading } from './slice';
 export { authWatcher } from './sagas';

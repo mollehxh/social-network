@@ -3,8 +3,13 @@ import { Formik } from 'formik';
 import { Button } from 'shared/ui/Button';
 import { Divider } from 'shared/ui/Divider';
 import { Input } from 'shared/ui/Input';
+import { signUp } from 'features/auth/model';
+import { useDispatch } from 'react-redux';
+
 
 export const SignUpForm = () => {
+  const dispatch = useDispatch();
+
   return (
     <Formik
       initialValues={{
@@ -15,7 +20,7 @@ export const SignUpForm = () => {
         confirmPassword: '',
       }}
       onSubmit={values => {
-        // dispatch(signUpAction(values));
+        dispatch(signUp(values));
       }}
     >
       {({ values, handleChange, handleSubmit }) => (

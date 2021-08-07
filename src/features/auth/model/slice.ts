@@ -14,7 +14,7 @@ const authSlice = createSlice({
       state.isLoading = action.payload;
     },
     signIn(store, action) {},
-    signUp() {},
+    signUp(store, action) {},
   },
 });
 
