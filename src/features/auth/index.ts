@@ -1,4 +1,3 @@
-export { SignUpForm } from './ui/SignUpForm';
-export { SignInForm } from './ui/SignInForm';
-export { authReducer } from './model';
+export * from './ui';
+export * as authModel from './model';
 export { authWatcher } from './model';
