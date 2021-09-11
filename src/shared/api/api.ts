@@ -1,11 +1,13 @@
+import firebase from 'firebase';
 import { firestore } from 'shared/config/firebase-config';
 
-export const fetchMessages = async () => {
-  const collection = await firestore.collection('messages').get();
-  const messages = collection.docs.map((item) => item.data());
-  return messages;
-};
-
-export const sendMessage = async (data: any) => {
-  firestore.collection('messages').add(data);
+export const onDialogMessagesChanged = (
+  uid: string,
+  callback: (snapshot: firebase.firestore.DocumentData[]) => void
+) => {
+  firestore
+    .collection('users')
+    .doc(uid)
+    .collection('dialogs')
+    .onSnapshot((snapshot) => callback(snapshot.docs.map((doc) => doc.data())));
 };

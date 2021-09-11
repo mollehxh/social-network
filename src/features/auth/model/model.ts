@@ -1,5 +1,5 @@
 import { createEffect, forward } from 'effector';
-import { userModel } from 'entities/user';
+import { sessionModel } from 'entities/session';
 import { signIn, signOut, signUp } from 'shared/api/auth';
 
 export const fxSignIn = createEffect(
@@ -10,7 +10,7 @@ export const fxSignIn = createEffect(
 );
 
 export const fxSignUp = createEffect(
-  async (email: string, password: string) => {
+  async ({ email, password }: { email: string; password: string }) => {
     const user = await signUp(email, password);
     return user;
   }
@@ -23,5 +23,6 @@ export const fxSignOut = createEffect(async () => {
 
 forward({
   from: [fxSignIn.doneData, fxSignUp.doneData, fxSignOut.doneData],
-  to: userModel.setUser,
+  to: sessionModel.setSession,
 });
+export const foo = null;

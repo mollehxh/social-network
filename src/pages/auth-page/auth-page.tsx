@@ -1,10 +1,11 @@
-import { AuthForm } from 'features/auth';
-import { fetchMessages } from 'shared/api/api';
+import { AuthForm, RegisterForm } from 'features/auth';
 
 export const AuthPage = () => {
   return (
     <div>
       <AuthForm />
+      <hr />
+      <RegisterForm />
     </div>
   );
 };

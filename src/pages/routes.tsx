@@ -11,13 +11,20 @@ export const publicRoutes: RouteConfig[] = [
   {
     component: AuthPage,
     path: '/auth',
-    exact: true,
+    exact: false,
   },
 ];
 export const privateRoutes: RouteConfig[] = [
   {
+    //@ts-ignore
+    component: DialogsPage,
+    path: '/tee',
+    exact: false,
+  },
+  {
+    //@ts-ignore
     component: DialogsPage,
     path: '/dialogs',
-    exact: true,
+    exact: false,
   },
 ];

@@ -1,1 +1,1 @@
-export * from './model';
+export { SendMessageForm } from './ui';

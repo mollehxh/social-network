@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 import { auth } from 'shared/config/firebase-config';
-import { setUser } from 'entities/user/model';
+import { sessionModel } from 'entities/session';
 
 export const withAuth = (component: () => React.ReactNode) => () => {
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      setUser(user);
+    const unsubscribe = auth.onAuthStateChanged((user: any) => {
+      sessionModel.setSession(user);
       unsubscribe();
     });
   }, []);

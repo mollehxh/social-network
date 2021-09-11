@@ -1,1 +1,1 @@
-export { SendForm } from './send-form';
+export { SendMessageForm } from './send-message-form';
